@@ -57,6 +57,42 @@ mod tests {
     }
 
     #[test]
+    fn test_variance() {
+        let length: usize = 5;
+        let mut cur = curve_statistics::CurveStatistics::new(length);
+
+        for i in 1..=length {
+            let arr: Vec<f64> = vec![i as f64; length];
+            cur.add(&arr);
+        }
+        assert_eq!(cur.count(), length);
+
+        let variances = cur.variances();
+        for i in 0..length {
+            assert!((cur.variance(i) - 2.0f64).abs() < 1e-6);
+            assert!((variances[i] - 2.0f64).abs() < 1e-6);
+        }
+    }
+
+    #[test]
+    fn test_un_variance() {
+        let length: usize = 5;
+        let mut cur = curve_statistics::CurveStatistics::new(length);
+
+        for i in 1..=length {
+            let arr: Vec<f64> = vec![i as f64; length];
+            cur.add(&arr);
+        }
+        assert_eq!(cur.count(), length);
+
+        let un_variances = cur.un_variances();
+        for i in 0..length {
+            assert!((cur.un_variance(i) - 2.5f64).abs() < 1e-6);
+            assert!((un_variances[i] - 2.5f64).abs() < 1e-6);
+        }
+    }
+
+    #[test]
     fn test_standard_deviation() {
         let length: usize = 5;
         let mut cur = curve_statistics::CurveStatistics::new(length);
