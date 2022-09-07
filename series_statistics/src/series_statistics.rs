@@ -1,13 +1,13 @@
 use incremental_statistics::incremental_statistics;
 
-pub struct CurveStatistics {
+pub struct SeriesStatistics {
     series: Vec<incremental_statistics::IncrementalStatistics>,
     count: usize,
 }
 
-impl CurveStatistics {
-    pub fn new(length: usize) -> CurveStatistics {
-        CurveStatistics {
+impl SeriesStatistics {
+    pub fn new(length: usize) -> SeriesStatistics {
+        SeriesStatistics {
             series: vec![incremental_statistics::IncrementalStatistics::new(); length],
             count: 0usize,
         }

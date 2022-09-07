@@ -1,1 +1,1 @@
-# curve_statistics
+# series_statistics
