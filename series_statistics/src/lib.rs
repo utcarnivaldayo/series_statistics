@@ -1,13 +1,13 @@
-pub mod curve_statistics;
+pub mod series_statistics;
 
 #[cfg(test)]
 mod tests {
-    use crate::curve_statistics;
+    use crate::series_statistics;
 
     #[test]
     fn test_add() {
         let length: usize = 5;
-        let mut cur = curve_statistics::CurveStatistics::new(length);
+        let mut cur = series_statistics::SeriesStatistics::new(length);
 
         for i in 1..=length {
             let arr: Vec<f64> = vec![i as f64; length];
@@ -20,7 +20,7 @@ mod tests {
     #[test]
     fn test_add_bulk() {
         let length: usize = 5;
-        let mut cur = curve_statistics::CurveStatistics::new(length);
+        let mut cur = series_statistics::SeriesStatistics::new(length);
 
         let matrix: Vec<Vec<f64>> = vec![
             vec![1.0f64; length],
@@ -41,7 +41,7 @@ mod tests {
     #[test]
     fn test_mean() {
         let length: usize = 5;
-        let mut cur = curve_statistics::CurveStatistics::new(length);
+        let mut cur = series_statistics::SeriesStatistics::new(length);
 
         for i in 1..=length {
             let arr: Vec<f64> = vec![i as f64; length];
@@ -59,7 +59,7 @@ mod tests {
     #[test]
     fn test_variance() {
         let length: usize = 5;
-        let mut cur = curve_statistics::CurveStatistics::new(length);
+        let mut cur = series_statistics::SeriesStatistics::new(length);
 
         for i in 1..=length {
             let arr: Vec<f64> = vec![i as f64; length];
@@ -77,7 +77,7 @@ mod tests {
     #[test]
     fn test_un_variance() {
         let length: usize = 5;
-        let mut cur = curve_statistics::CurveStatistics::new(length);
+        let mut cur = series_statistics::SeriesStatistics::new(length);
 
         for i in 1..=length {
             let arr: Vec<f64> = vec![i as f64; length];
@@ -95,7 +95,7 @@ mod tests {
     #[test]
     fn test_standard_deviation() {
         let length: usize = 5;
-        let mut cur = curve_statistics::CurveStatistics::new(length);
+        let mut cur = series_statistics::SeriesStatistics::new(length);
 
         for i in 1..=length {
             let arr: Vec<f64> = vec![i as f64; length];
@@ -113,7 +113,7 @@ mod tests {
     #[test]
     fn test_un_standard_deviation() {
         let length: usize = 5;
-        let mut cur = curve_statistics::CurveStatistics::new(length);
+        let mut cur = series_statistics::SeriesStatistics::new(length);
 
         for i in 1..=length {
             let arr: Vec<f64> = vec![i as f64; length];
@@ -131,7 +131,7 @@ mod tests {
     #[test]
     fn test_upper() {
         let length: usize = 5;
-        let mut cur = curve_statistics::CurveStatistics::new(length);
+        let mut cur = series_statistics::SeriesStatistics::new(length);
 
         for i in 1..=length {
             let arr: Vec<f64> = vec![i as f64; length];
@@ -149,7 +149,7 @@ mod tests {
     #[test]
     fn test_un_upper() {
         let length: usize = 5;
-        let mut cur = curve_statistics::CurveStatistics::new(length);
+        let mut cur = series_statistics::SeriesStatistics::new(length);
 
         for i in 1..=length {
             let arr: Vec<f64> = vec![i as f64; length];
@@ -167,7 +167,7 @@ mod tests {
     #[test]
     fn test_lower() {
         let length: usize = 5;
-        let mut cur = curve_statistics::CurveStatistics::new(length);
+        let mut cur = series_statistics::SeriesStatistics::new(length);
 
         for i in 1..=length {
             let arr: Vec<f64> = vec![i as f64; length];
@@ -185,7 +185,7 @@ mod tests {
     #[test]
     fn test_un_lower() {
         let length: usize = 5;
-        let mut cur = curve_statistics::CurveStatistics::new(length);
+        let mut cur = series_statistics::SeriesStatistics::new(length);
 
         for i in 1..=length {
             let arr: Vec<f64> = vec![i as f64; length];
@@ -203,7 +203,7 @@ mod tests {
     #[test]
     fn test_clear() {
         let length: usize = 5;
-        let mut cur = curve_statistics::CurveStatistics::new(length);
+        let mut cur = series_statistics::SeriesStatistics::new(length);
 
         for i in 1..=length {
             let arr: Vec<f64> = vec![i as f64; length];
