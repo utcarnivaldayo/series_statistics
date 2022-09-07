@@ -1,5 +1,5 @@
 [package]
-name = "curve_statistics"
+name = "series_statistics"
 version = "0.1.0"
 edition = "2021"
 
