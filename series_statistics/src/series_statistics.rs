@@ -25,6 +25,18 @@ impl SeriesStatistics {
         means
     }
 
+    pub fn sum(&self, index: usize) -> f64 {
+        self.series[index].mean() * self.count as f64
+    }
+
+    pub fn sums(&self) -> Vec<f64> {
+        let sums: Vec<f64> = vec![0.0; self.series.len()];
+        for i in 0..self.series.len() {
+            sums[i] = self.series[i].sum();
+        }
+        sums
+    }
+
     pub fn variance(&self, index: usize) -> f64 {
         self.series[index].variance()
     }
