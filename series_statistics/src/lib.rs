@@ -57,6 +57,23 @@ mod tests {
     }
 
     #[test]
+    fn test_sum() {
+        let length: usize = 5;
+        let mut cur = series_statistics::SeriesStatistics::new(length);
+
+        for i in 1..=length {
+            let arr: Vec<f64> = vec![i as f64; length];
+            cur.add(&arr);
+        }
+        assert_eq!(cur.count(), length);
+        let sums = cur.sums();
+        for i in 0..length {
+            assert!((cur.sum(i) - 3.0 * length as f64).abs() < 1e-6);
+            assert!((sums[i] - 3.0 * length as f64).abs() < 1e-6);
+        }
+    }
+
+    #[test]
     fn test_variance() {
         let length: usize = 5;
         let mut cur = series_statistics::SeriesStatistics::new(length);

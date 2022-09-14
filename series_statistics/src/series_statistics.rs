@@ -30,7 +30,7 @@ impl SeriesStatistics {
     }
 
     pub fn sums(&self) -> Vec<f64> {
-        let sums: Vec<f64> = vec![0.0; self.series.len()];
+        let mut sums: Vec<f64> = vec![0.0; self.series.len()];
         for i in 0..self.series.len() {
             sums[i] = self.series[i].sum();
         }
