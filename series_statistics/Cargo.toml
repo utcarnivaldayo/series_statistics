@@ -6,4 +6,4 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-incremental_statistics = { git = "ssh://git@github.com/utcarnivaldayo/incremental_statistics.git?path=incremental_statistics", branch = "main" }
+incremental_statistics = { git = "ssh://git@github.com/utcarnivaldayo/incremental_statistics.git", branch = "main" }
