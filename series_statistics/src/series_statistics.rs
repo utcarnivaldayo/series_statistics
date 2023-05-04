@@ -1,5 +1,6 @@
 use incremental_statistics::incremental_statistics;
 
+#[derive(Clone)]
 pub struct SeriesStatistics {
     series: Vec<incremental_statistics::IncrementalStatistics>,
     count: usize,
